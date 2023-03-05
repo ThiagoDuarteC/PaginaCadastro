@@ -1,0 +1,346 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+
+:root{
+    --green: rgb(70, 165, 159);
+    --white: #ffffff;
+    --gray: #ececec;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.conteudo{
+    height: 50%;
+    width: 65%;
+    min-width: 800px;
+    background-color: var(--white);
+    border-radius: 15px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.conteudo::before{
+    content: "";
+    position: absolute;
+    background-color: var(--green);
+    width: 40%;
+    height: 100%;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    left: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgb(0, 25, 32) 0%, rgb(15, 53, 68) 100%);
+}
+
+/* Inicio primeiro conteudo */
+
+.primeiro-conteudo{
+    display: flex;
+    position: relative;
+}
+
+.primeiro-conteudo .segunda-coluna{
+    z-index: 11;
+}
+
+.primeira-coluna{
+    text-align: center;
+    width: 40%;
+    z-index: 1;
+}
+
+.titulo{
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.titulo.cor-primaria{
+    color: var(--white);
+}
+
+.titulo.cor-segundaria{
+    color: var(--green);
+}
+
+.descricao{
+    font-size: 14px;
+    font-weight: 300px;
+    color: var(--white);
+    line-height: 24px;
+    padding: 10px 0;
+}
+
+.btn{
+    border-radius: 15px;
+    text-transform: uppercase;
+    color: var(--white);
+    font-size: 15px;
+    padding: 8px 0;
+    cursor: pointer;
+    font-weight: bold;
+    width: 180px;
+    align-self: center;
+    border-width: 0px;
+}
+
+.btn.troca{
+    background-color: transparent;
+    border: 1px solid var(--white);
+    transition: 0.5s;
+}
+
+.btn.troca:hover{
+    background-color: var(--white);
+    color: #58af9b;
+    transition: 0.5s;
+}
+
+.btn.cadastro,
+.btn.login{
+    background-color: var(--green);
+    border: 1px solid var(--green);
+    transition: 0.5s;
+    margin-top: 20px;
+}
+
+.btn.cadastro:hover,
+.btn.login:hover{
+    background-color: var(--white);
+    border: 1px solid var(--green);
+    color: #58af9b;
+    transition: 0.5s;
+}
+
+.segunda-coluna{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    width: 55%;
+    margin-top: 20px;
+}
+
+/*.formulario input{
+    height: 30px;
+    border: none;
+    background-color: var(--gray);
+    margin: 12px 0;
+    width: 100%;
+}*/
+
+.login-label,
+.cadastro-label{
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.login-label .input,
+.cadastro-label .input{
+    width: 100%;
+    background-color: var(--gray);
+    border: 2px solid rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    outline: none;
+    font-size: 13px;
+    padding: 20px 10px 10px;
+    font-weight: bold;
+    color: #343434;
+}
+
+.login-label span,
+.cadastro-label span{
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #A7A7A7;
+    margin: 20px;
+    cursor: text;
+    transition: all 200ms ease;
+}
+
+.input:focus{
+    background-color: #F9F9F9;
+    border: 2px solid #343434;
+}
+
+.login-label .span-ativo,
+.cadastro-label .span-ativo{
+    font-size: 9px;
+    margin: 8px 10px;
+}
+
+/*.label-input{
+    background-color: var(--gray);
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.icone{
+    color: #7f898a;
+    padding: 0 5px;
+}*/
+
+/* Fim do primeiro conteudo */
+
+/* Inicio do segundo conteudo */
+
+.segundo-conteudo{
+    position: absolute;
+    display: flex;
+}
+
+.segundo-conteudo .primeira-coluna{
+    order: 2;
+    z-index: -1;
+}
+
+.segundo-conteudo .segunda-coluna{
+    order: 1;
+    z-index: -1;
+}
+
+.senha{
+    color: #34495e;
+    font-size: 14px;
+    text-align: center;
+}
+
+.login-js .primeiro-conteudo .primeira-coluna{
+    z-index: -1;
+}
+
+.login-js .primeiro-conteudo .segunda-coluna{
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoEsquerda 1.1s;
+}
+
+.login-js .segundo-conteudo .primeira-coluna{
+    z-index: 1001;
+    transition: 0.9s;
+}
+
+.login-js .segundo-conteudo .segunda-coluna{
+    z-index: 999;
+}
+
+.login-js .conteudo::before{
+    left: 60%;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    animation: trocaTela 1.5s;
+    z-index: 1000;
+}
+
+.cadastrar-js .primeiro-conteudo .primeira-coluna{
+    z-index: 1001;
+    transition: 0.9s;
+}
+
+.cadastrar-js .primeiro-conteudo .segunda-coluna{
+    z-index: 999;
+}
+
+.cadastrar-js .segundo-conteudo .primeira-coluna{
+    z-index: -1;
+}
+
+.cadastrar-js .segundo-conteudo .segunda-coluna{
+    z-index: -1;
+    position: relative;
+    animation: deslocamentoDireita 1.1s;
+}
+
+
+.cadastrar-js .conteudo::before{
+    animation: voltaTela 1.5s;
+    z-index: 1000;
+}
+
+/* Fim do segundo conteudo */
+
+/* Animação CSS */
+
+@keyframes trocaTela {
+    from{
+        left: 0;
+        width: 40%;
+    }
+
+    to{
+        left: 60%;
+        width: 40%;
+    }
+}
+
+@keyframes voltaTela {
+    from{
+        left: 60%;
+        width: 40%;
+    }
+
+    to{
+        left: 0;
+        width: 40%;
+    }
+}
+
+/* Animação conteudo */
+
+@keyframes deslocamentoEsquerda {
+    from{
+        left: 0;
+        z-index: 1000;
+        opacity: 1;
+    }
+
+    to{
+        left: -110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+@keyframes deslocamentoDireita {
+    from{
+        left: 0;
+        z-index: 1000;
+        opacity: 1;
+    }
+
+    to{
+        left: 110px;
+        opacity: 0;
+        z-index: -1;
+    }
+}
+
+/* Criação para dark mode */
+
+.btn-mode{
+    display: flex;
+    justify-content: right;
+    align-items: normal;
+}
